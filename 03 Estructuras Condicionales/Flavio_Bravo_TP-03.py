@@ -81,5 +81,81 @@ if Palabra_frase and Palabra_frase [-1] in vocales :
       print ("!")
 print ("Resultado :", Palabra_frase)
 
+#8) Escribir un programa que solicite al usuario que ingrese su nombre y el número 1, 2 o 3 
+#dependiendo de la opción que desee: 
+#1. Si quiere su nombre en mayúsculas. Por ejemplo: PEDRO. 
+#2. Si quiere su nombre en minúsculas. Por ejemplo: pedro. 
+#3. Si quiere su nombre con la primera letra mayúscula. Por ejemplo: Pedro. 
+#El programa debe transformar el nombre ingresado de acuerdo a la opción seleccionada por el 
+#usuario e imprimir el resultado por pantalla. Nota: investigue uso de las funciones upper(), 
+#lower() y title() de Python para convertir entre mayúsculas y minúsculas.
+# upper : convierte todas las letras de un string a mayusculas
+#lower : Convierte todas las letras de un string a minusculas
+#title : Convierte la primera letra de un string a mayusculas y las demas a minusculas
+Nombre = (input("ingrese su nombre"))
+print ("ingrese el numero dependiendo la opcion que desee")
+print ("1, si quiere su nombre en mayusculas")
+print ("2, si quiere su nombre en minusculas")
+print ("3, si quiere la primera letra en mayusculas y despues las demas en minusculas")
+opcion = int  (input ("ingrese el numero elegido"))
+if opcion == 1:
+      print (Nombre.upper())
+elif opcion == 2:
+      print (Nombre.lower())      
+elif opcion == 3:
+      print (Nombre())    
+else:
+      print ("opcion no valida, elija el numero 1,2 o 3")  
 
-      
+#  9) Escribir un programa que pida al usuario la magnitud de un terremoto, clasifique la 
+#magnitud en una de las siguientes categorías según la escala de Richter e imprima el resultado 
+#por pantalla: 
+#● Menor que 3: "Muy leve" (imperceptible). 
+#● Mayor o igual que 3  y menor que 4: "Leve" (ligeramente perceptible). 
+#● Mayor o igual que 4  y menor que 5: "Moderado" (sentido por personas, pero 
+#generalmente no causa daños). 
+#● Mayor o igual que 5  y menor que 6: "Fuerte" (puede causar daños en estructuras 
+#débiles). 
+#● Mayor o igual que 6  y menor que 7: "Muy Fuerte" (puede causar daños significativos). 
+#● Mayor o igual que 7: "Extremo" (puede causar graves daños a gran escala).     
+Magnitud = int (input ("ingrese la magnitud de un terremoto"))
+if Magnitud < 3 :
+      print ("muy leve, (inperseptible)")
+elif Magnitud <= 3 and Magnitud < 4 :
+      print ("leve,ligeramente perseptible")  
+elif Magnitud >= 4 and Magnitud < 5 :
+      print ("moderaro,(sentido por personas, pero mo causa daños)")  
+elif Magnitud >= 5 and Magnitud < 6 :
+      print ("fuerte, (puede causar daños en estructuras debiles )")     
+elif Magnitud >= 6 and Magnitud < 7 :
+      print ("muy fuerte (puede causar daños significativos)")      
+else :
+      print ("Extremo(puede causar graves daños a gran escala)") 
+
+#10) Escribir un programa que pregunte al usuario en cuál hemisferio se encuentra (N/S), qué mes 
+#del año es y qué día es. El programa deberá utilizar esa información para imprimir por pantalla 
+#si el usuario se encuentra en otoño, invierno, primavera o verano.
+hemisferio =  input ("en cual hemisferio se encuentra? (Norte=N, Sur=S):").upper()
+mes = int (input("ingrese el numero del mes (1-12)"))
+dia = int (input ("ingrese el dia del mes"))
+#Determinamos la estacion segun el hemisferio
+if (mes == 12 and dia >=21) or (mes in [1,2]) or (mes == 3 and dia <=20):
+      estacion_norte = "inverno"
+      estacion_sur = "verano"
+elif (mes == 3 and dia >=21) or (mes in [4,5]) or (mes == 6 and dia <=20 ):
+      estacion_norte = "primavera"
+      estacion_sur = "otoño"
+elif (mes == 6 and dia >=21) or (mes in [7,8]) or (mes == 9 and dia <=20):
+      estacion_norte ="verano" 
+      estacion_sur = "invierno"
+else : #Desde el 21 de septiembre hasta el 20 de diciembre (incluidos)
+      estacion_norte = "otoño"
+      estacion_norte = "primavera"
+# Elegimos la estacion segun el hemisferio
+if hemisferio == "N":
+      estacion = estacion_norte
+elif hemisferio == "S":
+      estacion = estacion_sur
+else:
+      estacion = "hemisferio invalido, ingres N o S"   
+print (f"estas en la estacion {estacion}")               
